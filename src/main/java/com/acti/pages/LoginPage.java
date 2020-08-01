@@ -38,4 +38,6 @@ public class LoginPage extends DriverScript {
 	public String VerifyActiPageTitle() {
 		return driver.getTitle();
 	}
+	
+	
 }

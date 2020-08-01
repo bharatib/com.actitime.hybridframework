@@ -28,6 +28,7 @@ public class DriverScript {
 	@Test
 	public static void initBrowser() {
 		String browser = prop.getProperty("browser");
+		if (browser.equalsIgnoreCase("chrome")) {
 		System.setProperty("webdriver.chrome.driver", "./Browsers/chromedriver.exe");
 	    WebDriver driver=new ChromeDriver();
 	    driver.manage().window().maximize();
@@ -35,8 +36,10 @@ public class DriverScript {
 	    driver.manage().deleteAllCookies();
 	    String url = prop.getProperty("qaurl");
 	    driver.get(url);
-	    
-		
+	    }
+		else {
+			System.out.println("Not valid browser");
+		}
 	}
 	
 	
